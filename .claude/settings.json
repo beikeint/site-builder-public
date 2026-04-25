@@ -1,0 +1,57 @@
+{
+  "_comment": "独立站建站-site-builder · 基础权限骨架。首次上手后可按需追加 Bash 白名单以减少确认次数。",
+  "permissions": {
+    "allow": [
+      "mcp__client-manager",
+      "mcp__client-manager__add_client",
+      "mcp__client-manager__list_clients",
+      "mcp__client-manager__get_client",
+      "mcp__client-manager__search_clients",
+      "mcp__client-manager__update_client",
+      "mcp__client-manager__add_timeline",
+
+      "mcp__deployer",
+      "mcp__deployer__deploy",
+      "mcp__deployer__deploy_status",
+      "mcp__deployer__list_deployable",
+
+      "mcp__seo-checker",
+      "mcp__seo-checker__check_seo",
+      "mcp__seo-checker__check_pagespeed",
+      "mcp__seo-checker__check_structured_data",
+      "mcp__seo-checker__batch_check",
+
+      "mcp__site-monitor",
+      "mcp__site-monitor__check_site",
+      "mcp__site-monitor__check_all_sites",
+      "mcp__site-monitor__check_ssl_expiry",
+
+      "mcp__content-tracker",
+      "mcp__content-tracker__add_content",
+      "mcp__content-tracker__list_content",
+      "mcp__content-tracker__update_content",
+      "mcp__content-tracker__content_summary",
+
+      "mcp__fetch__fetch",
+      "mcp__fetcher__fetch_url",
+      "mcp__fetcher__fetch_urls",
+
+      "mcp__brightdata__scrape_as_markdown",
+      "mcp__brightdata__search_engine",
+
+      "mcp__image-generator__generate_image",
+      "mcp__image-generator__generate_cover",
+      "mcp__image-generator__generate_infographic",
+
+      "WebSearch",
+      "WebFetch",
+
+      "Bash(bash scripts/build-qa.sh)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(npx wrangler:*)",
+      "Bash(bash preview.sh)",
+      "Bash(node scripts/*.mjs)"
+    ]
+  }
+}
