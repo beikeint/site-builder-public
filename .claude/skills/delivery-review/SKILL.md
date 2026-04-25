@@ -332,6 +332,31 @@ description: Website delivery workflow - competitor analysis, five-dimension sco
 
 注：上述 3 项已内置于 `scripts/build-qa.sh` 第 9 项，`npm run qa` 会自动跑。基于 astro-b2b-starter v2.4+ 的新站默认带正确的 Header 实现，但老站 fork 时可能继承早期文字 logo 版本，交付前必须对着本清单 22.1/22.2 验证一次。
 
+五·四、v2.5 前沿视觉默认配置（3项 · 2026-04-25 新增 · 防"3 圆按钮模板化丑"+"白底单调"事件重演）
+
+> **背景**：2026-04-25 客户两次反馈 ① demo-a v1 FloatingCTA 三圆按钮"丑+所有站都这样" ② 全站白底太单调。已通过 starter v2.5 升级（FloatingCTA Intercom-style + Header backdrop-blur + ScrollProgress + Cards hover lift + SectionBackdrop bold mode）从源头修。本组验收防止老站或 fork 错版本时漏检。
+
+#16 全站浮动入口只剩 1 处（FloatingCTA 容器）
+   - 验证命令：`grep -cE 'fixed bottom-6 right-6|bottom-6 right-6 rtl' dist/en/index.html`
+   - 必须 == 1（>1 = 有旧 FloatingCTA v1 残留 / Footer 老 fixed WhatsApp 按钮没删，会重叠）
+   - 失败时定位：`grep -rn "fixed bottom-6 right-6" src/components/ src/layouts/ src/pages/`
+
+#17 FloatingCTA v2 Intercom-style trigger 存在
+   - 验证命令：`grep -cE 'id="floating-cta-trigger"|aria-controls="floating-cta-popup"' dist/en/index.html`
+   - 必须 >= 1（== 0 = 还在用 v1 三圆按钮，客户会反馈"丑+所有站都这样"）
+   - 失败时操作：从 `astro-b2b-starter/src/components/core/FloatingCTA.astro` 复制 v2 版本替换；同步注入 i18n `floatingCta.*` 9 个 key 每语种
+
+#18 Header backdrop-blur + 顶部 ScrollProgress 进度条
+   - 验证命令：
+     ```
+     grep -cE 'id="site-header"[^>]*backdrop-blur' dist/en/index.html  # 必须 >= 1
+     grep -cE 'id="scroll-progress"' dist/en/index.html                 # 必须 >= 1
+     ```
+   - 失败时定位：检查 BaseLayout.astro 是否 import + 渲染 ScrollProgress；检查 Header.astro 是否带 `id="site-header"` + `bg-white/95 backdrop-blur-md`
+   - 真机验证：滚动页面时观察顶部 3px 渐变条跟随滚动比例移动；Header 滚动后 shadow 加深
+
+注：以上 3 项已内置于 `scripts/build-qa.sh` 第 10 项（v2.5 Frontier Visual Defaults），`npm run qa` 自动跑。基于 astro-b2b-starter v2.5+ 的新站默认全过；老站升级时按上述命令逐项验证。
+
 六、收录加速优化（必须，上线当天执行）
 操作人：服务商（Claude Code执行）
 23. 检查sitemap.xml是否包含所有页面

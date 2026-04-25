@@ -521,4 +521,55 @@ GEO部分：
 
 ---
 
-*独立站建站智能体 · 独立站技能库 · 建站执行技能*
+## 五、v2.5 前沿视觉默认配置（2026-04-25 升级，starter 已内置）
+
+> **来源事件**：客户两次反馈"白底单调"+"3 圆按钮所有站都这样" → starter 源头修。
+
+### 5.1 默认全站组件（fork starter 即自动渲染，无需手动 import）
+
+`BaseLayout.astro` 已注入 3 个组件，所有页面默认带：
+
+```astro
+<body>
+  <ScrollProgress />     {/* 顶部 3px 渐变进度条 */}
+  <slot />               {/* 页面正文 */}
+  {!hideFloatingCTA && <FloatingCTA locale={locale} />}  {/* Intercom-style 单胶囊 */}
+  <ExitIntent locale={locale} />                          {/* features.exitIntent: true 才渲染 */}
+</body>
+```
+
+执行阶段需要做的：
+
+1. **品牌色变量**：`global.css` 的 `--color-primary` / `--color-primary-dark` / `--color-accent` 必须在阶段 1 就定好 — 它们是 FloatingCTA 渐变 + ScrollProgress 渐变 + cards hover glow 的统一来源。如果客户没指定品牌色，**先跑 site-analyzer 抓取参考站配色**再定，不要凭感觉
+2. **i18n.floatingCta.* 9 个 key**：每个语种文件都要填齐（trigger / close / title / subtitle / waPromise / emailSubject / emailPromise / inquiryTitle / inquiryPromise / langBadge）。漏填 = 浮动按钮显示 `floatingCta.trigger` 字符串
+3. **features.exitIntent 默认 true**：v2.5 起默认开（与 FloatingCTA v2 配套构成"移动+桌面"双触点询盘网）。客户强反感才改 false
+4. **Header backdrop-blur**：Header.astro 已内置 `id="site-header"` + `bg-white/95 backdrop-blur-md` + 滚动后 `is-scrolled` shadow 加深，无需额外操作
+5. **Cards hover lift**：`.bg-white.rounded-{lg|xl|2xl}` 全站零 markup 升级，`global.css` 已写。新增 section/卡片直接用 `bg-white rounded-2xl` 就自动获得 hover 效果
+
+### 5.2 SectionBackdrop bold mode 使用规则
+
+`SectionBackdrop` v2 加了 `intensity="bold"` — 适合需要视觉重量的 section（不能全用，否则装饰失效）。
+
+| 场景 | intensity | 推荐 variant + accent | 备注 |
+|---|---|---|---|
+| Hero（紧跟其后的视觉重压区） | `bold` | `cool` 或 `industrial` + 客户 brand-700 hex | mesh gradient + brand blob 给 hero 后区域兜底 |
+| CTA Banner（页面中段强转化） | `bold` | `warm` + `accent` 色 | warm 暖色调引导行动 |
+| Stats / Trust 数据条 | `bold` + `pattern="grid"` | `industrial` + brand-700 | grid 比 dots 更"专业" |
+| Equipment / Factory / Cases 三件套 | `subtle`（默认）+ `image="*.avif"` | 按 section 性质配 4 变体 | image 走 prepare-backdrops.mjs 预处理 |
+| FAQ / 长博客 / 文字密集区 | 不加 backdrop | — | 装饰会抢文字 |
+
+每页 backdrop 总数 ≤ 4-5 个，超过 = 装饰失效。
+
+### 5.3 v2.5 视觉验收（执行最后阶段必跑）
+
+`npm run qa` 末尾会跑 v2.5 三项检查（来自 build-qa.sh #16/#17/#18）：
+
+- ✅ 全站浮动入口只剩 1 处（FloatingCTA 容器，无 v1 三圆按钮残留）
+- ✅ FloatingCTA v2 Intercom-style trigger 存在
+- ✅ Header backdrop-blur + 顶部 ScrollProgress 进度条都在
+
+任一失败 = QA FAILED，禁止 deploy。
+
+---
+
+*独立站建站智能体 · 独立站技能库 · 建站执行技能 v2.5 · 2026-04-25*

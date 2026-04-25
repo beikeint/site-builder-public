@@ -545,4 +545,36 @@ site.config.ts 是技术配置源，CLAUDE.md 用于记录项目级信息：
 
 ---
 
-*独立站建站智能体 · 独立站技能库 · 建站启动技能 v2.3 · 2026-04*
+## 六、v2.5 前沿视觉默认配置（2026-04-25 升级）
+
+> **来源事件**：客户两次反馈"白底单调"+"3 圆按钮所有站都这样"→ 从 starter 源头修，避免下个新客户站重蹈 v1 模板化覆辙。
+
+### 新站默认必带（已写进 starter，零额外动作）
+
+| 组件 | 位置 | 作用 | 关闭方式 |
+|---|---|---|---|
+| **ScrollProgress** | 顶部 3px 渐变进度条 | 长页面阅读位置反馈，B2B 多 Section 落地页尤其需要 | 暂无开关（建议保留） |
+| **FloatingCTA v2** | 右下角 Intercom-style 单胶囊 | 点击展开 popup → WhatsApp / Email / Detailed Inquiry 三选项 + 响应时间承诺 + 多语种标识 | `<BaseLayout hideFloatingCTA={true}>` |
+| **ExitIntent** | 桌面端鼠标移到顶部触发 | 一会话只弹一次，邮箱+提交直入询盘漏斗 | `features.exitIntent: false` |
+| **Header backdrop-blur** | Sticky `#site-header` `bg-white/95 + backdrop-blur-md` | 滚动后 `is-scrolled` 加深模糊 + shadow，高级感 | 无（默认） |
+| **Cards hover lift** | `.bg-white.rounded-{lg\|xl\|2xl}` 零 markup 升级 | hover 上浮 -4px + brand-color glow shadow | `prefers-reduced-motion` 自动关 |
+| **SectionBackdrop bold mode** | `intensity="bold"` 加 mesh gradient + brand blob + radial mask | Hero / CTA / Stats 等需视觉重量的 section | 默认 `intensity="subtle"` 保持 v2.3 行为 |
+
+### 启动时智能体必检三件
+
+启动技能输出"项目就绪"前**必须确认 site.config.ts**：
+
+1. `features.exitIntent` — v2.5 起默认 `true`，客户强反感才改 `false`
+2. 品牌色 token（primary / primary-dark / accent）已根据 site-analyzer 产出填入 — 它们是 FloatingCTA 渐变 + ScrollProgress 渐变 + cards hover glow 的统一来源
+3. `i18n.floatingCta.*` 9 个 key 每语种填齐：`trigger / close / title / subtitle / waPromise / emailSubject / emailPromise / inquiryTitle / inquiryPromise / langBadge`
+
+### 与业务叙事的关系
+
+视觉默认是**装饰层**，不替代业务叙事建模：
+
+- 即使 v2.5 视觉满配，也必须先产出《业务叙事档案.md》才能进 build-execution（v2.4 硬规则不变）
+- 视觉默认让"叙事正确的站"看起来不像草稿；不能让"叙事错的站"看起来像高端站
+
+---
+
+*独立站建站智能体 · 独立站技能库 · 建站启动技能 v2.5 · 2026-04-25*

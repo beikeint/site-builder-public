@@ -1,4 +1,4 @@
-# 独立站建站-site-builder v2.4
+# 独立站建站-site-builder v2.5
 
 ---
 > 🎯 **首次激活时必读(对客户场景生效,内部使用可忽略)**
@@ -16,10 +16,11 @@
 ---
 
 
-> 版本：v2.4 | 2026-04-17 升级
-> 架构：**业务叙事先行** + DNA满配 + 模块化布局系统 + 功能可选 | astro-b2b-starter 配置驱动 | 9个技能 | AI站内能力 | 经验库自动进化
+> 版本：v2.5 | 2026-04-25 升级
+> 架构：**业务叙事先行** + DNA满配 + **前沿视觉默认** + 模块化布局系统 + 功能可选 | astro-b2b-starter 配置驱动 | 9个技能 | AI站内能力 | 经验库自动进化
+> v2.5 升级（2026-04-25）：**前沿视觉默认配置进入 starter 源头** — FloatingCTA Intercom-style 单胶囊（替代 v1 三圆按钮模板）+ ScrollProgress 顶部品牌渐变进度条 + Header backdrop-blur sticky + Cards hover lift + brand glow（零 markup）+ SectionBackdrop bold 模式（mesh gradient + brand blob + radial mask）。BaseLayout 自动注入询盘+进度条三件套。新增交付 QA #16/#17/#18。从"运营补丁视角"上升到"建站源头视角"
 > v2.4 升级（2026-04-17）：**业务叙事建模作为必做前置步骤**；行业蓝图从"必用"降级为"参考菜单"；功能开关默认全关；起点模板 DEFAULT_LAYOUT 置空；新增反模板复刻自检 5 问
-> 触发事件：Demo-A v1 MVP 客户满意 vs v2 满配客户不满 — 模板复刻陷阱事件
+> 触发事件：Demo-A v1 vs v2 模板复刻陷阱（2026-04-17）/ 客户两次反馈"白底单调"+"3 圆按钮所有站都这样" — 视觉模板化事件（2026-04-25）
 > v2.3 遗产：27个Section变体 + 3种产品页布局 + 7套行业蓝图 + 经验库自动进化系统
 
 ---
@@ -92,12 +93,29 @@
 - [ ] 4. data/*.ts 占位数据占比 < 30%？
 - [ ] 5. 产出比手搓 MVP 版本讲得更清楚吗？**不清楚 = 负优化，回炉**
 
-### 交付前 13 项 QA 必检
+**v2.5 前沿视觉默认（fork starter 即自动带，无需手动 import）**：
+
+- [ ] **FloatingCTA v2 Intercom-style** — 右下角单胶囊 + 展开 popup（WhatsApp / Email / Detailed Inquiry 三选项，带响应时间承诺 + 多语种小标识）。**不要再用 v1 三圆按钮**（客户反馈"丑+所有站都这样"）
+- [ ] **ScrollProgress** — 顶部 3px 品牌渐变进度条 sticky，跟随滚动比例
+- [ ] **Header backdrop-blur** — `#site-header` `bg-white/95 + backdrop-blur-md`，滚动后 `is-scrolled` 加深 shadow
+- [ ] **Cards hover lift + brand glow** — `.bg-white.rounded-{lg|xl|2xl}` 全站零 markup 升级，hover 上浮 -4px + brand-color glow
+- [ ] **SectionBackdrop bold 模式** — `intensity="bold"` 加 mesh gradient + brand blob + radial mask 边缘羽化，用在 Hero / CTA Banner / Stats 等需视觉重量的 section（默认 subtle 不变）
+- [ ] **i18n.floatingCta.* 9 个 key 每语种填齐**（trigger / close / title / subtitle / waPromise / emailSubject / emailPromise / inquiryTitle / inquiryPromise / langBadge）— 漏填 = 浮动按钮显示 i18n key 字符串
+- [ ] **品牌色 token 统一**：`global.css` 的 `--color-primary` / `--color-primary-dark` / `--color-accent` 必须先定 — 它们驱动 FloatingCTA 渐变 + ScrollProgress 渐变 + cards hover glow（不定 = 默认 navy 视觉与客户品牌不符）
+
+**v2.5 视觉默认背后的方法论变迁**：
+
+| 阶段 | 视角 | 修复点 |
+|---|---|---|
+| 老路（被动） | 运营补丁视角 | 客户站上线后被反馈"丑/单调/老套"→ ops 智能体补丁→ 同样的坑下个客户站再踩 |
+| v2.5（主动） | 建站源头视角 | starter 默认带前沿视觉→ 每个新客户站开局就过关→ ops 不再做视觉补丁，专注内容/SEO/转化 |
+
+### 交付前 16 项 QA 必检
 
 清单见 [记忆 feedback_website_qa_checklist.md]，核心：
-WhatsApp区号 / 电话一致性 / 竞品水印 / mailto兜底 / 统一来源 / Schema / GA4追踪 / IndexNow / 表单实测 / **导航落地页** / **产品字段空值** / **根 URL verification meta** / **移动端 hamburger + img logo**（2026-04-23 新增 · demo-a 事件）
+WhatsApp区号 / 电话一致性 / 竞品水印 / mailto兜底 / 统一来源 / Schema / GA4追踪 / IndexNow / 表单实测 / **导航落地页** / **产品字段空值** / **根 URL verification meta** / **移动端 hamburger + img logo**（2026-04-23 demo-a 事件）/ **#16 全站浮动入口只剩 1 处** / **#17 FloatingCTA v2 Intercom-style trigger 存在** / **#18 Header backdrop-blur + 顶部 ScrollProgress 进度条**（2026-04-25 新增 · 视觉模板化事件）
 
-自动化：`npm run qa` → `scripts/build-qa.sh` 第 9 项会扫 `dist/en/index.html` 里的 `mobileMenuToggle` 和 `<img...logo>`。本地 build 后必须看到第 9 项 ✅ 再走 deployer。
+自动化：`npm run qa` → `scripts/build-qa.sh` 第 9 项扫移动导航 + 第 10 项扫 v2.5 视觉默认。本地 build 后必须看到第 9-10 项全 ✅ 再走 deployer。
 
 ### 9 个技能调用（满配必走）
 
@@ -514,4 +532,4 @@ npm run build → deployer.deploy(client_id)
 ---
 
 *独立站建站智能体 · 不卖工具，交付结果*  
-*独立站建站-site-builder v2.4 | **业务叙事先行** + DNA满配 | 7 业务模型判定 + 叙事档案必做前置 | 蓝图降级为参考菜单 | 27 Section变体 + 3 产品页布局 + 7 行业蓝图 | 5 种Schema | 12 事件GA4 | GEO答案胶囊 | 经验库自动进化 | 2026-04-18 升级*
+*独立站建站-site-builder v2.5 | **业务叙事先行** + DNA满配 + **前沿视觉默认** | 7 业务模型判定 + 叙事档案必做前置 | 蓝图降级为参考菜单 | 27 Section变体 + 3 产品页布局 + 7 行业蓝图 | 5 种Schema | 12 事件GA4 | GEO答案胶囊 | FloatingCTA v2 Intercom-style + ScrollProgress + Header backdrop-blur + Cards hover lift + SectionBackdrop bold | 经验库自动进化 | 2026-04-25 升级*
