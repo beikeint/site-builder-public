@@ -345,13 +345,13 @@ features.programmaticSEO: true
 
 ---
 
-## 技能调度表（9个技能：6 智能体内 + 3 全局共享）
+## 技能调度表（10 个技能：7 智能体内 + 3 全局共享）
 
-> **技能分布说明**：建站涉及的 9 个技能分两处放：
-> - 🏠 **智能体内** `智能体/建站/独立站建站-site-builder/.claude/skills/` — 6 个建站专属技能
+> **技能分布说明**：建站涉及的 10 个技能分两处放：
+> - 🏠 **智能体内** `智能体/建站/独立站建站-site-builder/.claude/skills/` — 7 个建站专属技能（含 v2.5-visual-retrofit 老站升级）
 > - 🌐 **全局** `.claude/skills/` — 3 个跨智能体可复用技能（分析/交接/扩展）
 >
-> 只有在 `独立站建站-site-builder/` 目录下启动 Claude Code，才能同时加载两层。在 `智能体/建站/` 上层目录对话只加载全局那 3 个，会漏掉 6 个核心技能。
+> 只有在 `独立站建站-site-builder/` 目录下启动 Claude Code，才能同时加载两层。在 `智能体/建站/` 上层目录对话只加载全局那 3 个，会漏掉 7 个核心技能。
 
 | 指令 | 技能 | 位置 | 说明 |
 |------|------|------|------|
@@ -364,8 +364,9 @@ features.programmaticSEO: true
 | `[客户] 交付验收` | → **delivery-review** | 🏠 智能体内 | 竞品分析+评分+博客审查+上线检查 |
 | `[客户] 交接运营` | → **build-to-ops-handoff** | 🌐 全局 | 基线报告+交接文档+写入timeline |
 | `[客户] 扩展网站` | → **site-expansion** | 🌐 全局 | 新增产品线/内容迁移/结构调整 |
+| `[客户] 升级 v2.5 视觉` / `对齐前沿视觉` | → **v2.5-visual-retrofit** | 🏠 智能体内 | 老站对齐 starter v2.5：12 步 SOP，含品牌色适配、i18n 9 key 全语种、流量页保护、QA #16/#17/#18 |
 | `部署 [客户]` | → deployer.deploy | MCP | 一键 build + 上传 + 验证 |
-| `QA检查` | → `npm run qa` | 脚本 | build-qa.sh 15项自动质量检查 |
+| `QA检查` | → `npm run qa` | 脚本 | build-qa.sh 12 项自动质量检查（含 v2.5 三检查） |
 | `处理图片 [目录]` | → `npm run images` | 脚本 | 批量下载→压缩→WebP→命名 |
 
 ### 📖 reference-v2.3-zh.md · 中文增量升级
