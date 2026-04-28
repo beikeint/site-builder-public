@@ -1,15 +1,37 @@
 ---
 name: v2.5-visual-retrofit
-description: 把老客户站对齐到 starter v2.5 前沿视觉默认 — FloatingCTA Intercom + ScrollProgress + Header backdrop-blur + Cards hover lift + SectionBackdrop bold mode + ExitIntent。12 步流程含品牌色适配、i18n 9 key 全语种填齐、QA #16/#17/#18 验证、流量页保护
+description: 把老客户站对齐到 starter v2.5/v2.6/v2.7 视觉默认 — v2.5 前沿视觉（FloatingCTA Intercom + ScrollProgress + Header backdrop-blur + Cards hover lift + SectionBackdrop bold + ExitIntent）+ v2.6 5 大视觉硬伤修复 + v2.7 7 业务模型 preset 判定。含品牌色适配、i18n 9 key 全语种填齐、QA #16-#34 验证、流量页保护
 ---
 
-# 老站升级 v2.5 视觉默认 · 12 步 SOP
+# 老站升级 v2.5/v2.6/v2.7 视觉默认 · 13 步 SOP
 
-> 适用场景：已上线的客户站（fork 自 starter v2.0~v2.4）需要对齐 v2.5 前沿视觉默认配置。
+> 适用场景：已上线的客户站（fork 自 starter v2.0~v2.4）需要对齐到 starter 最新视觉默认配置。
 >
-> **不适用**：新建站（fork starter v2.5 即自带 — 走 build-startup / build-execution 流程）。
+> **不适用**：新建站（fork starter v2.7 即自带 — 走 build-startup / build-execution 流程）。
 >
-> 来源事件：2026-04-25 客户两次反馈"白底单调"+"3 圆按钮所有站都这样"→ ops 智能体当晚补丁两站（demo-a + demo-c）→ 当天晚些把整套沉淀进 starter v2.5（commit `c28c290`）→ 后续客户站需手动对齐。
+> 来源事件链：
+> - 2026-04-25 客户反馈"白底单调"+"3 圆按钮所有站都这样" → v2.5 前沿视觉默认
+> - 2026-04-27 客户反馈"很 low / 像 AI 半成品 / 完全没改变" → v2.6 5 大视觉硬伤 QA + v2.7 7 业务模型 preset
+
+## Step 0 · v2.7 业务模型判定 + visual preset 选择（必做前置）
+
+读《业务叙事档案.md》→ 判定客户属于 7 业务模型哪一个 → 查《经验库/业务模型库/业务模型x视觉风格匹配矩阵.md》→ 输出 `客户/<客户>/visual-preset-decision.md`。
+
+**禁止**："上次客户用蓝橙就这次也蓝橙" / "上次 Intercom 浮动按钮就这次也 Intercom" — 必须基于业务模型选 preset。
+
+| 业务模型 | preset | 关键差异 |
+|---|---|---|
+| Pure Manufacturer | `industrial-trust` | 工业蓝深沉 + 真车间照 + 禁插画 |
+| Solution Integrator | `solution-cream` | Cream 底 + 行业切换 hero + 蓝橙双色 |
+| OEM-ODM | `oem-neutral` | 中性灰 + 工业金 + 真产品特写 |
+| Brand Owner | `brand-saturated` | 品牌饱和色 + lifestyle + mega type |
+| Trader / Distributor | `trader-neutral` | 信任灰蓝 + 多品牌 logo 墙 |
+| Material Supplier | `material-vertical` | Petrol/teal + 应用行业切片 portal |
+| Service Provider | `service-editorial` | Cream + serif + 团队感 |
+
+详见：starter `src/styles/theme-presets.css` 7 个 preset 完整规格。
+
+完成 Step 0 后再进 Step 1（原 12 步流程）。
 
 ---
 

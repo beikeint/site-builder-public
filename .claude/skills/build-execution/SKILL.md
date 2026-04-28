@@ -54,6 +54,38 @@ astro.config.mjs            ← site 域名
 
 ## 三、分阶段建站流程 + 提示词
 
+### 阶段1：项目骨架搭建（含 v2.7 视觉风格定型 · 必做前置）
+
+> v2.7 升级（2026-04-27）：骨架搭建前**必须先做"视觉风格定型"**——读《业务叙事档案.md》→ 判定 7 业务模型之一 → 查矩阵选 theme preset → 再进 site.config.ts 改色。
+>
+> 这一步避免"先随便选色 → 上线后客户说'丑/不专业' → 再返工换色"循环。
+>
+> **业务模型 → preset 决策表**（速查；详见《经验库/业务模型库/业务模型x视觉风格匹配矩阵.md》）：
+
+| 业务模型 | preset | 主色 | Hero 风格 |
+|---|---|---|---|
+| Pure Manufacturer | `industrial-trust` | 工业蓝 + 安全红强调 | 浅底 + 真车间照 + stats |
+| Solution Integrator | `solution-cream` | 蓝 + 安全橙 + cream 底 | cream 底 + 行业切换 hero |
+| OEM-ODM | `oem-neutral` | 中性灰 + 工业金 | 真产品特写 + outcome headline |
+| Brand Owner | `brand-saturated` | 客户品牌饱和色 + cream | Lifestyle + mega type |
+| Trader / Distributor | `trader-neutral` | 信任灰蓝 + 信任青 | 多品牌 logo 墙 |
+| Material Supplier | `material-vertical` | Petrol/teal + 化工橙 + cream | 应用行业切片 portal |
+| Service Provider | `service-editorial` | Cream + 近黑 + 珊瑚红 | Cream + serif 巨型 type + 团队 |
+
+**视觉风格定型提示词**：
+
+```
+基于客户《业务叙事档案.md》：
+1. 判定客户属于 7 业务模型哪一个（必须明确，不允许"两个之间"）
+2. 查《经验库/业务模型库/业务模型x视觉风格匹配矩阵.md》
+3. 输出客户的 visual preset 选择 + 关键决策点（主色 / Hero 风格 / 字体家族 / 插画风格 / Section 顺序）
+4. 如客户有强品牌色（Brand Owner 类）→ 在 preset 上做 overrides 微调
+5. 不能套用"上次客户的色 + Intercom 浮动按钮 + 深蓝渐变"——避免"模板感"
+
+产出：
+- {客户}/visual-preset-decision.md（包含选 preset + 理由 + override 项 + 决策回溯依据）
+```
+
 ### 阶段1：项目骨架搭建
 
 ```

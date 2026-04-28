@@ -110,12 +110,21 @@
 | 老路（被动） | 运营补丁视角 | 客户站上线后被反馈"丑/单调/老套"→ ops 智能体补丁→ 同样的坑下个客户站再踩 |
 | v2.5（主动） | 建站源头视角 | starter 默认带前沿视觉→ 每个新客户站开局就过关→ ops 不再做视觉补丁，专注内容/SEO/转化 |
 
-### 交付前 16 项 QA 必检
+### v2.7 视觉天花板能力（2026-04-27 升级）
 
-清单见 [记忆 feedback_website_qa_checklist.md]，核心：
-WhatsApp区号 / 电话一致性 / 竞品水印 / mailto兜底 / 统一来源 / Schema / GA4追踪 / IndexNow / 表单实测 / **导航落地页** / **产品字段空值** / **根 URL verification meta** / **移动端 hamburger + img logo**（2026-04-23 demo-a 事件）/ **#16 全站浮动入口只剩 1 处** / **#17 FloatingCTA v2 Intercom-style trigger 存在** / **#18 Header backdrop-blur + 顶部 ScrollProgress 进度条**（2026-04-25 新增 · 视觉模板化事件）
+跨行业天花板研究 + 设计系统理论沉淀。新增三份永久能力资产：
+- **`经验库/通用教训/网站视觉设计天花板能力册.md`** — 12 站简评 + 12 永恒法则 + 10 现代趋势 + CRO 7 原则 + 30 项视觉自检清单
+- **`经验库/业务模型库/业务模型x视觉风格匹配矩阵.md`** — 7 业务模型 → preset 速查表
+- **`starter src/styles/theme-presets.css`** — 7 业务模型 token preset（industrial-trust / solution-cream / oem-neutral / brand-saturated / trader-neutral / material-vertical / service-editorial）
 
-自动化：`npm run qa` → `scripts/build-qa.sh` 第 9 项扫移动导航 + 第 10 项扫 v2.5 视觉默认。本地 build 后必须看到第 9-10 项全 ✅ 再走 deployer。
+新建站第一步必做：判定 7 业务模型之一 → 查矩阵选 preset → 改 site.config.ts theme 字段。**禁止"先随便选色再说"**。
+
+### 交付前 21 项 QA 必检
+
+清单见 [记忆 feedback_website_qa_checklist.md] 和 [经验库/通用教训/视觉天花板模式-B2B制造商.md]，核心：
+WhatsApp区号 / 电话一致性 / 竞品水印 / mailto兜底 / 统一来源 / Schema / GA4追踪 / IndexNow / 表单实测 / **导航落地页** / **产品字段空值** / **根 URL verification meta** / **移动端 hamburger + img logo**（2026-04-23 demo-a 事件）/ **#16 全站浮动入口只剩 1 处** / **#17 FloatingCTA v2 Intercom-style trigger 存在** / **#18 Header backdrop-blur + 顶部 ScrollProgress 进度条**（2026-04-25 视觉模板化事件）/ **#19 占位区清扫**（Client Logo N / Buyer Name / Article 占位 / Product video coming soon 必为 0）/ **#20 Advantages 视觉重量**（每卡有真实背景图引用 ≥3，避免白底+小icon+文字三件套）/ **#21 类目卡视觉冲击**（aspect-[3/4] 或 [4/5] 高瘦大卡，不是 80px 缩略图）/ **#22 SectionBackdrop bold 不能错配深色 section**（浅色 overlay 加在 bg-blue-900 深色背景会让文字看不清）/ **#23 Hero banner 差异化**（首页/About/Blog 不能全部同一深蓝渐变）（2026-04-27 新增 · v2.6 EASTRAGON 视觉天花板事件）
+
+自动化：`npm run qa` → `scripts/build-qa.sh` 第 9 项扫移动导航 / 第 10 项扫 v2.5 视觉默认 / **第 11 项 #19-#23 扫 v2.6 视觉天花板 5 大硬伤**。本地 build 后必须看到第 9-11 项全 ✅ 再走 deployer。
 
 ### 9 个技能调用（满配必走）
 
