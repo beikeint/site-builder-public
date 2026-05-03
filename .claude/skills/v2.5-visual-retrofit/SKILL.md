@@ -299,6 +299,63 @@ bash ${WORKSPACE_ROOT}/scripts/release-agent.sh <客户站 release 名>
 4. **没删 widgets/ 旧组件** — `npm run qa` 第 10 项 #16 会爆（fixed bottom-6 right-6 出现 ≥2 处）
 5. **动了流量页 URL** — 步骤 3 没做。客户骂你两天前还能搜到，现在 404 了
 6. **客户 002 / 002u 跳过步骤 4** — 它们已经被 ops 补丁过 core/FloatingCTA v2 了，再覆盖会重置成 starter 默认（可能 i18n 标识或品牌色不对）。要先 diff 再决定
+7. **i18n.advantages.items 字段架构错配**（v2.6 新增坑） — IconGrid 使用 `data/advantages.ts` 多语种字典而不是 `t(locale, 'advantages.items')`，因为 `t()` 函数只返回 string 不返回数组。如果直接照 starter en.ts 复制 `advantages.items` 不更新 `data/advantages.ts` = IconGrid 渲染显示 i18n key 字符串。详见步骤 13。
+8. **`data/advantages.ts` 4→6 项扩展时 Alternating slice 索引** — Alternating.astro 用 `advantages.slice(0, 4)` 显示前 4 项，扩展到 6 项时 Alternating 不变（向后兼容），但要确认前 4 项业务叙事承载力是核心叙事单元。详见步骤 14。
+
+---
+
+### 阶段 E · v2.6 卡片重写适配（v2.5 → v2.6 升级补充，2026-05-03 新增）
+
+#### 步骤 13 — i18n advantages 6 项 stat 字段扩展（v2.6 IconGrid Stripe stat-blocks 模式必做）
+
+如果客户当前用旧 IconGrid（白底+小24px icon+文字三件套）需升级到 v2.6 Stripe stat-blocks 模式，必须做**双层数据扩展**：
+
+**第一层 · `data/advantages.ts`**（IconGrid 真正读这个）
+
+老版接口（4 字段）→ 新版接口（6 字段）：
+
+```ts
+export interface Advantage {
+  // v2.6 新增：
+  stat: string;            // 巨型数字短语 '500+' / '24h' / '7-Day'
+  iconPath?: string;       // 装饰 SVG path（lucide / heroicons 风格）
+  // v2.5 原有：
+  icon: string;            // emoji（Alternating 还在用）
+  title: Record<string, string>;
+  description: Record<string, string>;
+  image?: string;          // 真实图（IconGrid 卡背景 cover opacity 30%）
+}
+```
+
+数据从 4 项扩到 6 项，每项 6 语种填齐（en/es/fr/ar/ru/pt 用 spawn 5 sonnet 翻译 EN 原稿）。
+
+**第二层 · `i18n/translations/{lang}.ts` advantages 块同步扩展**（SEO 兜底）
+
+虽然 IconGrid 实际从 `data/advantages.ts` 读，但 i18n 块同步保留作 SEO 兜底 + 未来 GEO 答案胶囊潜在用途：
+
+```ts
+advantages: {
+  title: '...',
+  subtitle: '...',
+  items: [
+    { stat: '500+', title: 'Proprietary Formulas', desc: '...' },
+    // 6 项 × 3 字段 stat/title/desc
+  ],
+}
+```
+
+**判断 stat 字段内容**（来自业务叙事档案）：
+- 看叙事档案 3-5 个核心叙事单元
+- 每个叙事单元提取一个数字短语（years / formulas / certifications / countries / SLA / MOQ）
+- stat 字段建议短：3-7 字符（'500+', '24h', '7-Day', '10 Yrs'），避免大字溢出卡片
+
+#### 步骤 14 — Alternating slice 索引向后兼容确认
+
+老 starter `Alternating.astro` 用 `advantages.slice(0, 4)`。当 `data/advantages.ts` 从 4 → 6 项扩展时：
+- ✅ Alternating 自动向后兼容（仍只取前 4 项）
+- ⚠️ 必须确保**前 4 项是业务叙事档案的核心叙事单元**（不是次要数字）
+- 例：客户 004 demo-b.com 前 4 项 = `[500+ Formulas, 24h Engineer, 3 Cert, 60+ Countries]`，全是核心叙事；后 2 项 `[7-Day Sample, 10 Yrs Supply]` 是补充承诺
+- 如果客户站只有 IconGrid 没 Alternating，可以不考虑此步
 
 ---
 
@@ -306,11 +363,11 @@ bash ${WORKSPACE_ROOT}/scripts/release-agent.sh <客户站 release 名>
 
 | 客户 | 域名 | 当前代 | 升级状态 |
 |---|---|---|---|
-| 客户 001 Demo-D | <填> | <填> | ⬜ |
+| 客户 001 Demo-D | hearingprotect.com | v2.6 视觉重做版 | ✅ 2026-04-27 EASTRAGON 视觉天花板事件触发 |
 | 客户 002 Demo-C / demo-c | demo-c.com | ops 补丁版（v2 浮动 + 4 层 backdrop） | ⬜ 补 ScrollProgress + Header blur + global.css |
 | 客户 002u Demo-A / demo-a | demo-a.com | ops 补丁版 | ⬜ 同上 |
 | 客户 003 Demo-E | <填> | <填> | ⬜ |
-| 客户 004 Demo-B | demo-b.com | <填> | ⬜（**注意流量页 /en/blog/pva-glue-vs-epoxy-resin/**） |
+| 客户 004 Demo-B | demo-b.com | **v2.5/v2.6/v2.7 完整升级** | ✅ **2026-05-03 IconGrid Stripe stat-blocks + 7 hero 差异化 + Featured aspect-[3/4] 6 大卡 + material-vertical preset 形式对齐**。v2.6 5 硬伤 61→92+/100。详见 [案例库/客户D-demo-b-v2.7-视觉天花板升级.md](../../../案例库/客户D-demo-b-v2.7-视觉天花板升级.md) |
 | 客户 005 | <填> | <填> | ⬜ |
 
 ---

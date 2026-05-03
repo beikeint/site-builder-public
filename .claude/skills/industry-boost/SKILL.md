@@ -463,6 +463,81 @@ GEO优化执行清单：
 
 ---
 
+## 四点五、重型设备 B2B 产品页 12 板块体系（v2.8 新增 / 2026-04-29）
+
+> **触发**：客户 002 demo-c.com 反馈3.docx 业务模型升级 — 重型设备买家不看"参数表+描述"，看"完整决策包"
+> **适用**：单台投资 USD 30K+ 的重型设备（EPS / 化工 / 包装机械 / 食品机械 / ICF / 注塑机 / 自动化产线）
+> **不适用**：轻消费品 / B2C / 一般 PPE / 普通制造商（严重过载）
+
+### 业务模型 → 12 板块判定
+
+| 业务模型 | 是否上 12 板块 |
+|---|---|
+| Pure Manufacturer（重型设备） | ✅ 必上 |
+| Solution Integrator（整线方案商） | ✅ 必上（产品 hub 页用 12 板块；Solution 页另一套结构）|
+| OEM-ODM（重型订制） | ✅ 必上 |
+| Brand Owner（重型工业品） | ✅ 必上 |
+| Pure Manufacturer（消费品 / PPE / 服装） | ❌ 不要用 |
+| Trader / Material Supplier | ❌ 不要用 |
+| Service Provider | ❌ 不适用 |
+
+### 12 板块（按买家决策路径排序）
+
+1. **What This Machine Solves** — 痛点-方案叙事块（3 条，Hero 后第一节，必带数字）
+2. **Working Principle** — 流程图 + 5-6 步骤工序（每步带具体参数）
+3. **Engineered Performance Advantages** — 数据化优势（4-6 卡，每条 metric+value+baseline+description，禁泛泛）
+4. **Full Specifications** — 完整参数表（必填 cycle time / steam / energy / output / power / dimensions）
+5. **Machine Configuration** — OEM 一览（PLC/Hydraulic/Sensor 品牌：Siemens/Yuken/Burkert/Mettler Toledo）
+6. **Applications + Real Photos** — 终端产品真实场景图（不是泛泛标签云）
+7. **Customer Case Studies** — 1-3 真实案例（国家+年份+配置+outcome 必含）
+8. **Factory Strength** — 4 数据卡（年限 / 车间面积 / 出口国数 / 装备工厂数）— 全站默认
+9. **Service Commitment** — 4 服务卡（5 年质保 / 24h 远程 / 全球技师 / 操作员培训）— 全站默认
+10. **ROI Snapshot** — 投资 + 回本 + 产能 3 数据 + 链向 ROI Calculator
+11. **FAQ** — 4-6 高频问题（FAQPage Schema → AI Overviews 引用率）
+12. **Final CTA** — 多触点询盘转化（产品页至少 5 触点）
+
+### 实施流程（老站二轮改造 / 新建站皆适用）
+
+**Step 1 — 业务模型判定**
+对照上表，确认客户在「✅ 必上 12 板块」象限。如果不是，用标准 8 板块产品页即可。
+
+**Step 2 — 选 Top 5 高流量产品（老站 GSC 数据 / 新建站客户提供）**
+- 老站：跑 `gsc_search_performance(dimension=page, days=28, limit=50)` 取 page 维度展示数 Top 5
+- 新建站：客户提供"最想推的 5 个旗舰产品"
+
+**Step 3 — 填充 deep-dive 数据（products-deep-dive.ts）**
+- 模板见 starter `src/data/products-deep-dive.ts`
+- 7 个字段（problemsSolved / workingPrinciple / metricsAdvantages / configuration / applicationPhotos / caseStudies / roiBaseline）
+- EN 优先，5 语种走并行翻译管道（B 升级，下一节）
+
+**Step 4 — 模板挂接**
+- starter 已挂接到 `Standard.astro`（默认）
+- FullWidth.astro / Sidebar.astro 需手动 import `<DeepDiveSections>` 组件
+- 全站默认（Factory Strength + Service Commitment）即使产品 deep-dive 数据空也显示 — 所有产品页都受益
+
+**Step 5 — Top 5 验证窗口（14 天）**
+- 上线后 7-14 天看 GSC CTR / GA4 view_item 转化
+- 提升明显 → 推广到剩余产品
+- 无提升 → 该客户买家不看 12 板块（罕见，但要尊重数据）
+
+### 反面案例：v1.0 单薄产品页的代价
+
+demo-c.com v1.0（2025-04-2026-04）：
+- 产品页只有 8 sections，Features 是泛泛"PLC 控制 / 节能高效"，0 数据
+- Applications 只有标签云无图
+- 0 案例 / 0 工厂实力 / 0 服务承诺 / 0 ROI
+- 客户 GSC 平均排名 13.x / CTR 持续 0% / 询盘转化低
+- 客户 4-29 主动反馈"建议添加 12 板块"= 损失流量数月
+
+### 数据 schema + 配套资产
+
+- 详细 schema：`经验库/通用教训/产品页 12 板块-重型设备 B2B.md`
+- starter 模板：`astro-b2b-starter/src/data/products-deep-dive.ts` + `src/components/DeepDiveSections.astro`
+- 自动 QA：`scripts/build-qa.sh` #35 检查 12 板块完整性
+- 实战案例：客户 002 demo-c.com v2.0（2026-04-29）
+
+---
+
 ## 五、注意事项
 
 1. **先判断行业类型再动手** — 类型A和类型B的策略差异很大，搞错了等于返工

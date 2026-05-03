@@ -1,4 +1,4 @@
-# 独立站建站-site-builder v2.5
+# 独立站建站-site-builder v2.8
 
 ---
 > 🎯 **首次激活时必读(对客户场景生效,内部使用可忽略)**
@@ -16,11 +16,13 @@
 ---
 
 
-> 版本：v2.5 | 2026-04-25 升级
-> 架构：**业务叙事先行** + DNA满配 + **前沿视觉默认** + 模块化布局系统 + 功能可选 | astro-b2b-starter 配置驱动 | 9个技能 | AI站内能力 | 经验库自动进化
+> 版本：v2.8 | 2026-04-29 升级
+> 架构：**业务叙事先行** + DNA满配 + **前沿视觉默认** + **重型设备 12 板块体系** + **6 语种翻译并行管道** + 模块化布局系统 + 功能可选 | astro-b2b-starter 配置驱动 | 9个技能 | AI站内能力 | 经验库自动进化
+> v2.8 升级（2026-04-29）：**重型设备 B2B 产品页 12 板块体系** + **6 语种翻译并行管道**进入 starter 源头。① 重型设备 12 板块（Pure Manufacturer / Solution Integrator / OEM-ODM 业务模型必上）：products-deep-dive.ts + DeepDiveSections.astro 组件 + Standard.astro 自动挂接 + build-qa #35 自动检测。② 6 语种翻译并行管道：scripts/merge-translations.mjs（参数化）+ SPAWN-TRANSLATORS.md（5 sonnet prompt 模板含行业术语对照表）+ build-qa #36 LocaleString 完整性检查。
+> 触发事件：客户 002 demo-c.com 《问题反馈3.docx》业务模型升级（Pure Manufacturer → Solution Integrator Multi-Tier）— 2026-04-29 一次性沉淀两大可复用 IP（产品页决策包 + 翻译并行管道）
 > v2.5 升级（2026-04-25）：**前沿视觉默认配置进入 starter 源头** — FloatingCTA Intercom-style 单胶囊（替代 v1 三圆按钮模板）+ ScrollProgress 顶部品牌渐变进度条 + Header backdrop-blur sticky + Cards hover lift + brand glow（零 markup）+ SectionBackdrop bold 模式（mesh gradient + brand blob + radial mask）。BaseLayout 自动注入询盘+进度条三件套。新增交付 QA #16/#17/#18。从"运营补丁视角"上升到"建站源头视角"
 > v2.4 升级（2026-04-17）：**业务叙事建模作为必做前置步骤**；行业蓝图从"必用"降级为"参考菜单"；功能开关默认全关；起点模板 DEFAULT_LAYOUT 置空；新增反模板复刻自检 5 问
-> 触发事件：Demo-A v1 vs v2 模板复刻陷阱（2026-04-17）/ 客户两次反馈"白底单调"+"3 圆按钮所有站都这样" — 视觉模板化事件（2026-04-25）
+> 触发事件：Demo-A v1 vs v2 模板复刻陷阱（2026-04-17）/ 客户两次反馈"白底单调"+"3 圆按钮所有站都这样" — 视觉模板化事件（2026-04-25）/ demo-c 客户反馈 3 业务模型升级 + 翻译大规模需求（2026-04-29）
 > v2.3 遗产：27个Section变体 + 3种产品页布局 + 7套行业蓝图 + 经验库自动进化系统
 
 ---
@@ -119,7 +121,7 @@
 
 新建站第一步必做：判定 7 业务模型之一 → 查矩阵选 preset → 改 site.config.ts theme 字段。**禁止"先随便选色再说"**。
 
-### 交付前 21 项 QA 必检
+### 交付前 30+ 项 QA 必检（v2.4-v2.7 累积）
 
 清单见 [记忆 feedback_website_qa_checklist.md] 和 [经验库/通用教训/视觉天花板模式-B2B制造商.md]，核心：
 WhatsApp区号 / 电话一致性 / 竞品水印 / mailto兜底 / 统一来源 / Schema / GA4追踪 / IndexNow / 表单实测 / **导航落地页** / **产品字段空值** / **根 URL verification meta** / **移动端 hamburger + img logo**（2026-04-23 demo-a 事件）/ **#16 全站浮动入口只剩 1 处** / **#17 FloatingCTA v2 Intercom-style trigger 存在** / **#18 Header backdrop-blur + 顶部 ScrollProgress 进度条**（2026-04-25 视觉模板化事件）/ **#19 占位区清扫**（Client Logo N / Buyer Name / Article 占位 / Product video coming soon 必为 0）/ **#20 Advantages 视觉重量**（每卡有真实背景图引用 ≥3，避免白底+小icon+文字三件套）/ **#21 类目卡视觉冲击**（aspect-[3/4] 或 [4/5] 高瘦大卡，不是 80px 缩略图）/ **#22 SectionBackdrop bold 不能错配深色 section**（浅色 overlay 加在 bg-blue-900 深色背景会让文字看不清）/ **#23 Hero banner 差异化**（首页/About/Blog 不能全部同一深蓝渐变）（2026-04-27 新增 · v2.6 EASTRAGON 视觉天花板事件）

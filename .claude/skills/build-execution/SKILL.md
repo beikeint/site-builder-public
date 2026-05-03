@@ -183,6 +183,38 @@ astro.config.mjs            ← site 域名
 4. 构建验证，确认所有语言页面正常渲染
 ```
 
+### 阶段3.5：6 语种翻译并行管道（v2.8 新增 / 2026-04-29）
+
+> **触发条件**：客户站 ≥3 语种 + 需翻译 100+ LocaleString 字段
+> **典型场景**：业务模型升级（产品页 8→12 板块 / Solutions 4→9 类）/ 大批量 deep-dive 数据扩充
+> **核心收益**：相比串行编辑速度提升 5-10 倍 + 0 翻译错误 + 主智能体上下文 0 占用
+
+**适用判定**：
+- ≥100 个 t() 调用 / 多个 deep-dive 文件 → 必走并行管道
+- <50 个字段 → 手动翻译反而更快
+- 散文类博客文章 → 走 humanizer-zh 不走此管道
+
+**执行 5 步**：
+
+1. **EN 数据规范化**：所有 LocaleString 字段用 `t('en text')` helper 包裹（products-deep-dive.ts / solutions-deep-dive.ts）
+
+2. **spawn 5 sonnet 并行**：主智能体在一条响应内启动 5 个 Agent，每个负责一个目标语种（es/pt/fr/ru/ar），prompt 模板见 `astro-b2b-starter/scripts/SPAWN-TRANSLATORS.md`，每个独立输出 JSON 到 `/tmp/<prefix>-translations-{lang}.json`
+
+3. **主智能体并行做独立任务**（关键收益）：5 sonnet 跑的 8-10 分钟内主智能体不空闲，可同时做其他独立任务（模板升级 / 错图修正 / 部署准备）
+
+4. **跑合并脚本**：5 个 JSON 都到位后跑 `node scripts/merge-translations.mjs` 自动按 t() 出现顺序回灌
+   - 长度断言 + idempotent check + 自动备份 /tmp/backup-*
+
+5. **build + 验证**：`npm run build` + 6 语种抽检关键术语本地化
+
+**配套资产**：
+- starter `scripts/merge-translations.mjs`：参数化合并脚本（接入时改 CONFIG）
+- starter `scripts/SPAWN-TRANSLATORS.md`：5 语种 prompt 模板 + 行业术语对照表
+- `scripts/build-qa.sh` #36：自动检测 t() 翻译覆盖率
+- 经验库：`通用教训/6 语种翻译并行管道.md`（含完整 prompt 模板 + 实战数据）
+
+**实战案例**：demo-c.com v2.0（2026-04-29）— 621 t() 25 分钟全到位 0 错误
+
 ### 阶段4：博客文章创建
 
 ```
