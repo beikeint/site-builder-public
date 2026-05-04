@@ -413,7 +413,7 @@ features.programmaticSEO: true
 | AI友好 | robots.txt AI白名单 + llms.txt + 答案胶囊 |
 | 程序化SEO | 3种差异化内容模板（国家/行业/问题4子类型） |
 | AI站内 | 产品选型向导(wizardTags) + ROI计算器(数据驱动) + AI顾问(Claude API) |
-| QA | `npm run qa` → build-qa.sh 15项自动检查 |
+| QA | `npm run qa` → build-qa.sh 16项自动检查（#19 占位反模式扩展 + qa-no-placeholder.sh src 层硬 guard，2026-05-03 起） |
 
 ---
 
@@ -436,7 +436,7 @@ features.programmaticSEO: true
 ## 部署流程
 
 ```
-npm run qa   → 15项自动检查全通过
+npm run qa   → 16项自动检查全通过（含 prebuild qa-no-placeholder 硬 guard）
 npm run build → deployer.deploy(client_id)
              → site-monitor.check_site(域名)
              → seo-checker.check_seo(域名)
