@@ -1,0 +1,244 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "EASTRAGON home" [ref=e5] [cursor=pointer]:
+        - /url: /en
+        - img [ref=e6]
+        - generic [ref=e7]: EASTRAGON
+      - navigation [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /en
+        - link "Products" [ref=e10] [cursor=pointer]:
+          - /url: /en/products
+        - link "About Us" [ref=e11] [cursor=pointer]:
+          - /url: /en/about
+        - link "Quality & Certificates" [ref=e12] [cursor=pointer]:
+          - /url: /en/quality
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /en/blog
+        - link "Contact Us" [ref=e14] [cursor=pointer]:
+          - /url: /en/contact
+      - generic [ref=e15]:
+        - button "English" [ref=e17]:
+          - text: English
+          - img [ref=e18]
+        - link "Get a Quote" [ref=e20] [cursor=pointer]:
+          - /url: /en/contact
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - heading "Our Products" [level=1] [ref=e24]
+      - paragraph [ref=e25]: Comprehensive hearing protection solutions for every need
+    - generic [ref=e27]:
+      - generic [ref=e29]:
+        - heading "🔇 Foam Ear Plugs" [level=2] [ref=e30]
+        - paragraph [ref=e31]: High-quality polyurethane foam ear plugs with excellent noise reduction. Soft, comfortable, and disposable — ideal for industrial, construction, and sleeping use.
+      - generic [ref=e32]:
+        - link "Classical Bullet Shape PU Foam Ear Plugs - hearing protection China manufacturer SA-7-1 Classical Bullet Shape PU Foam Ear Plugs View Details →" [ref=e33] [cursor=pointer]:
+          - /url: /en/products/sa-7-1-classical-bullet-shape-pu-foam-ear-plugs
+          - img "Classical Bullet Shape PU Foam Ear Plugs - hearing protection China manufacturer" [ref=e35]
+          - generic [ref=e36]:
+            - generic [ref=e37]: SA-7-1
+            - heading "Classical Bullet Shape PU Foam Ear Plugs" [level=3] [ref=e38]
+            - generic [ref=e40]: View Details →
+        - link "Cylinder Type Foam Ear Plugs - hearing protection China manufacturer SA-7-2 Cylinder Type Foam Ear Plugs View Details →" [ref=e41] [cursor=pointer]:
+          - /url: /en/products/sa-7-2-cylinder-type-foam-ear-plugs
+          - img "Cylinder Type Foam Ear Plugs - hearing protection China manufacturer" [ref=e43]
+          - generic [ref=e44]:
+            - generic [ref=e45]: SA-7-2
+            - heading "Cylinder Type Foam Ear Plugs" [level=3] [ref=e46]
+            - generic [ref=e48]: View Details →
+        - link "Bell Shape Slow Rebound Foam Ear Plugs - hearing protection China manufacturer SA-7-4 Bell Shape Slow Rebound Foam Ear Plugs View Details →" [ref=e49] [cursor=pointer]:
+          - /url: /en/products/sa-7-4-bell-shape-slow-rebound-foam-ear-plugs
+          - img "Bell Shape Slow Rebound Foam Ear Plugs - hearing protection China manufacturer" [ref=e51]
+          - generic [ref=e52]:
+            - generic [ref=e53]: SA-7-4
+            - heading "Bell Shape Slow Rebound Foam Ear Plugs" [level=3] [ref=e54]
+            - generic [ref=e56]: View Details →
+        - link "Standard Bullet Shape Foam Ear Plugs - hearing protection China manufacturer SA-7-5 Standard Bullet Shape Foam Ear Plugs SNR 38dB NRR 31dB View Details →" [ref=e57] [cursor=pointer]:
+          - /url: /en/products/sa-7-5-standard-bullet-shape-foam-ear-plugs
+          - img "Standard Bullet Shape Foam Ear Plugs - hearing protection China manufacturer" [ref=e59]
+          - generic [ref=e60]:
+            - generic [ref=e61]: SA-7-5
+            - heading "Standard Bullet Shape Foam Ear Plugs" [level=3] [ref=e62]
+            - generic [ref=e63]:
+              - generic [ref=e64]: SNR 38dB
+              - generic [ref=e65]: NRR 31dB
+            - generic [ref=e67]: View Details →
+    - generic [ref=e69]:
+      - generic [ref=e71]:
+        - heading "🔌 Silicone Ear Plugs" [level=2] [ref=e72]
+        - paragraph [ref=e73]: Reusable silicone ear plugs for swimming, sleeping, and noise protection. Waterproof, durable, and available in multiple colors.
+      - generic [ref=e74]:
+        - link "Colorful Silicone Swimming Earplugs for Kids - hearing protection China manufacturer SA-1-1 Colorful Silicone Swimming Earplugs for Kids View Details →" [ref=e75] [cursor=pointer]:
+          - /url: /en/products/sa-1-1-colorful-silicone-swimming-earplugs-for-kids
+          - img "Colorful Silicone Swimming Earplugs for Kids - hearing protection China manufacturer" [ref=e77]
+          - generic [ref=e78]:
+            - generic [ref=e79]: SA-1-1
+            - heading "Colorful Silicone Swimming Earplugs for Kids" [level=3] [ref=e80]
+            - generic [ref=e82]: View Details →
+        - link "Waterproof Noise Reduction Silicone Ear Plugs - hearing protection China manufacturer SA-1-3 Waterproof Noise Reduction Silicone Ear Plugs View Details →" [ref=e83] [cursor=pointer]:
+          - /url: /en/products/sa-1-3-waterproof-noise-reduction-silicone-ear-plugs
+          - img "Waterproof Noise Reduction Silicone Ear Plugs - hearing protection China manufacturer" [ref=e85]
+          - generic [ref=e86]:
+            - generic [ref=e87]: SA-1-3
+            - heading "Waterproof Noise Reduction Silicone Ear Plugs" [level=3] [ref=e88]
+            - generic [ref=e90]: View Details →
+        - link "Triple-flanged Waterproof Silicone Ear Plugs - hearing protection China manufacturer SA-1-7 Triple-flanged Waterproof Silicone Ear Plugs SNR 29dB View Details →" [ref=e91] [cursor=pointer]:
+          - /url: /en/products/sa-1-7-triple-flanged-waterproof-silicone-ear-plugs
+          - img "Triple-flanged Waterproof Silicone Ear Plugs - hearing protection China manufacturer" [ref=e93]
+          - generic [ref=e94]:
+            - generic [ref=e95]: SA-1-7
+            - heading "Triple-flanged Waterproof Silicone Ear Plugs" [level=3] [ref=e96]
+            - generic [ref=e98]: SNR 29dB
+            - generic [ref=e100]: View Details →
+        - link "Soft Silicone Ring Fashion Ear Plugs - hearing protection China manufacturer SA-2-17M Soft Silicone Ring Fashion Ear Plugs SNR 26dB View Details →" [ref=e101] [cursor=pointer]:
+          - /url: /en/products/sa-2-17m-soft-silicone-ring-fashion-ear-plugs
+          - img "Soft Silicone Ring Fashion Ear Plugs - hearing protection China manufacturer" [ref=e103]
+          - generic [ref=e104]:
+            - generic [ref=e105]: SA-2-17M
+            - heading "Soft Silicone Ring Fashion Ear Plugs" [level=3] [ref=e106]
+            - generic [ref=e108]: SNR 26dB
+            - generic [ref=e110]: View Details →
+    - generic [ref=e112]:
+      - generic [ref=e114]:
+        - heading "🎵 Filter Ear Plugs" [level=2] [ref=e115]
+        - paragraph [ref=e116]: Acoustic filter ear plugs that reduce noise while preserving sound clarity. Perfect for musicians, concerts, and noise-sensitive environments.
+      - generic [ref=e117]:
+        - link "Standard Filtered Earplugs - hearing protection China manufacturer SA-2-1 Standard Filtered Earplugs View Details →" [ref=e118] [cursor=pointer]:
+          - /url: /en/products/sa-2-1-standard-filtered-earplugs
+          - img "Standard Filtered Earplugs - hearing protection China manufacturer" [ref=e120]
+          - generic [ref=e121]:
+            - generic [ref=e122]: SA-2-1
+            - heading "Standard Filtered Earplugs" [level=3] [ref=e123]
+            - generic [ref=e125]: View Details →
+        - link "Musician Filtered Earplugs for Noise Sensitivity - hearing protection China manufacturer SA-2-2 Musician Filtered Earplugs for Noise Sensitivity View Details →" [ref=e126] [cursor=pointer]:
+          - /url: /en/products/sa-2-2-musician-filtered-earplugs
+          - img "Musician Filtered Earplugs for Noise Sensitivity - hearing protection China manufacturer" [ref=e128]
+          - generic [ref=e129]:
+            - generic [ref=e130]: SA-2-2
+            - heading "Musician Filtered Earplugs for Noise Sensitivity" [level=3] [ref=e131]
+            - generic [ref=e133]: View Details →
+        - link "Patented Acoustic Mesh Filtered Ear Plugs - hearing protection China manufacturer SA-2-7 Patented Acoustic Mesh Filtered Ear Plugs View Details →" [ref=e134] [cursor=pointer]:
+          - /url: /en/products/sa-2-7-patented-acoustic-mesh-filtered-ear-plugs
+          - img "Patented Acoustic Mesh Filtered Ear Plugs - hearing protection China manufacturer" [ref=e136]
+          - generic [ref=e137]:
+            - generic [ref=e138]: SA-2-7
+            - heading "Patented Acoustic Mesh Filtered Ear Plugs" [level=3] [ref=e139]
+            - generic [ref=e141]: View Details →
+    - generic [ref=e143]:
+      - generic [ref=e145]:
+        - heading "✋ Custom Moldable Ear Plugs" [level=2] [ref=e146]
+        - paragraph [ref=e147]: Self-moldable silicone ear plugs that conform to your unique ear shape. Reusable, comfortable, and suitable for all-day wear.
+      - link "Custom Moldable Silicone Ear Plugs - hearing protection China manufacturer SA-5-1 Custom Moldable Silicone Ear Plugs View Details →" [ref=e149] [cursor=pointer]:
+        - /url: /en/products/sa-5-1-custom-moldable-silicone-ear-plugs
+        - img "Custom Moldable Silicone Ear Plugs - hearing protection China manufacturer" [ref=e151]
+        - generic [ref=e152]:
+          - generic [ref=e153]: SA-5-1
+          - heading "Custom Moldable Silicone Ear Plugs" [level=3] [ref=e154]
+          - generic [ref=e156]: View Details →
+    - generic [ref=e158]:
+      - generic [ref=e160]:
+        - heading "🎧 Passive Ear Muffs" [level=2] [ref=e161]
+        - paragraph [ref=e162]: Passive noise reduction ear muffs for adults, babies, and children. Adjustable, foldable, and comfortable for extended use in noisy environments.
+      - generic [ref=e163]:
+        - link "Colorful Comfortable Baby Ear Muffs - hearing protection China manufacturer SA-8-1 Colorful Comfortable Baby Ear Muffs View Details →" [ref=e164] [cursor=pointer]:
+          - /url: /en/products/sa-8-1-colorful-comfortable-baby-ear-muffs
+          - img "Colorful Comfortable Baby Ear Muffs - hearing protection China manufacturer" [ref=e166]
+          - generic [ref=e167]:
+            - generic [ref=e168]: SA-8-1
+            - heading "Colorful Comfortable Baby Ear Muffs" [level=3] [ref=e169]
+            - generic [ref=e171]: View Details →
+        - link "Durable Soundproof Foldable Earmuffs - hearing protection China manufacturer SA-8-5 Durable Soundproof Foldable Earmuffs View Details →" [ref=e172] [cursor=pointer]:
+          - /url: /en/products/sa-8-5-durable-soundproof-foldable-earmuffs
+          - img "Durable Soundproof Foldable Earmuffs - hearing protection China manufacturer" [ref=e174]
+          - generic [ref=e175]:
+            - generic [ref=e176]: SA-8-5
+            - heading "Durable Soundproof Foldable Earmuffs" [level=3] [ref=e177]
+            - generic [ref=e179]: View Details →
+        - link "Light Adjustable Infant Earmuffs - hearing protection China manufacturer SA-8-9 Light Adjustable Infant Earmuffs View Details →" [ref=e180] [cursor=pointer]:
+          - /url: /en/products/sa-8-9-light-adjustable-infant-earmuffs
+          - img "Light Adjustable Infant Earmuffs - hearing protection China manufacturer" [ref=e182]
+          - generic [ref=e183]:
+            - generic [ref=e184]: SA-8-9
+            - heading "Light Adjustable Infant Earmuffs" [level=3] [ref=e185]
+            - generic [ref=e187]: View Details →
+        - link "Apple Shape Adult Size Earmuffs - hearing protection China manufacturer SA-8-10 Apple Shape Adult Size Earmuffs View Details →" [ref=e188] [cursor=pointer]:
+          - /url: /en/products/sa-8-10-apple-shape-adult-size-earmuffs
+          - img "Apple Shape Adult Size Earmuffs - hearing protection China manufacturer" [ref=e190]
+          - generic [ref=e191]:
+            - generic [ref=e192]: SA-8-10
+            - heading "Apple Shape Adult Size Earmuffs" [level=3] [ref=e193]
+            - generic [ref=e195]: View Details →
+    - generic [ref=e197]:
+      - generic [ref=e199]:
+        - heading "⚡ Electronic Ear Muffs" [level=2] [ref=e200]
+        - paragraph [ref=e201]: Active noise cancelling electronic ear muffs for shooting and industrial use. Amplifies ambient sound while blocking harmful noise levels.
+      - link "Electronic Active Noise Isolation Ear Muffs for Shooting - hearing protection China manufacturer SA-9-2 Electronic Active Noise Isolation Ear Muffs for Shooting View Details →" [ref=e203] [cursor=pointer]:
+        - /url: /en/products/sa-9-2-electronic-active-noise-isolation-ear-muffs
+        - img "Electronic Active Noise Isolation Ear Muffs for Shooting - hearing protection China manufacturer" [ref=e205]
+        - generic [ref=e206]:
+          - generic [ref=e207]: SA-9-2
+          - heading "Electronic Active Noise Isolation Ear Muffs for Shooting" [level=3] [ref=e208]
+          - generic [ref=e210]: View Details →
+    - generic [ref=e212]:
+      - heading "Looking for a Reliable Hearing Protection Supplier?" [level=2] [ref=e213]
+      - paragraph [ref=e214]: Contact us today for competitive pricing and professional OEM/ODM service.
+      - link "Get a Free Quote" [ref=e215] [cursor=pointer]:
+        - /url: /en/contact
+  - contentinfo [ref=e216]:
+    - generic [ref=e217]:
+      - generic [ref=e218]:
+        - generic [ref=e219]:
+          - generic [ref=e220]: EASTRAGON
+          - paragraph [ref=e221]: Professional hearing protection manufacturer since 2005. CE & ANSI certified products exported to 50+ countries.
+        - generic [ref=e222]:
+          - heading "Quick Links" [level=3] [ref=e223]
+          - list [ref=e224]:
+            - listitem [ref=e225]:
+              - link "About Us" [ref=e226] [cursor=pointer]:
+                - /url: /en/about
+            - listitem [ref=e227]:
+              - link "Quality & Certificates" [ref=e228] [cursor=pointer]:
+                - /url: /en/quality
+            - listitem [ref=e229]:
+              - link "Contact Us" [ref=e230] [cursor=pointer]:
+                - /url: /en/contact
+        - generic [ref=e231]:
+          - heading "Products" [level=3] [ref=e232]
+          - list [ref=e233]:
+            - listitem [ref=e234]:
+              - link "Foam Ear Plugs" [ref=e235] [cursor=pointer]:
+                - /url: /en/products#foam-ear-plugs
+            - listitem [ref=e236]:
+              - link "Silicone Ear Plugs" [ref=e237] [cursor=pointer]:
+                - /url: /en/products#silicone-ear-plugs
+            - listitem [ref=e238]:
+              - link "Filter Ear Plugs" [ref=e239] [cursor=pointer]:
+                - /url: /en/products#filter-ear-plugs
+            - listitem [ref=e240]:
+              - link "Passive Ear Muffs" [ref=e241] [cursor=pointer]:
+                - /url: /en/products#ear-muffs
+            - listitem [ref=e242]:
+              - link "Electronic Ear Muffs" [ref=e243] [cursor=pointer]:
+                - /url: /en/products#electronic-ear-muffs
+        - generic [ref=e244]:
+          - heading "Contact Us" [level=3] [ref=e245]
+          - list [ref=e246]:
+            - listitem [ref=e247]:
+              - img [ref=e248]
+              - generic [ref=e251]: Building A No. 6 Xinyuan Road, Jiangyin, Jiangsu Province, China
+            - listitem [ref=e252]:
+              - img [ref=e253]
+              - link "+86-0510-81602599" [ref=e255] [cursor=pointer]:
+                - /url: tel:+86-0510-81602599
+            - listitem [ref=e256]:
+              - img [ref=e257]
+              - link "sales@eastragonltd.com" [ref=e259] [cursor=pointer]:
+                - /url: mailto:sales@eastragonltd.com
+      - generic [ref=e260]:
+        - paragraph [ref=e261]: © 2026 Eastragon International Trade Co., Ltd. All rights reserved.
+        - link "Privacy Policy" [ref=e262] [cursor=pointer]:
+          - /url: /en/privacy
+  - button "Talk to Us" [ref=e264]:
+    - img [ref=e267]
+    - generic [ref=e269]: Talk to Us

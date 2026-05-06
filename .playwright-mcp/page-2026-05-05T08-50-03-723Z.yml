@@ -1,0 +1,276 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "EASTRAGON home" [ref=e5] [cursor=pointer]:
+        - /url: /ar
+        - img [ref=e6]
+        - generic [ref=e7]: EASTRAGON
+      - navigation [ref=e8]:
+        - link "الرئيسية" [ref=e9] [cursor=pointer]:
+          - /url: /ar
+        - link "المنتجات" [ref=e10] [cursor=pointer]:
+          - /url: /ar/products
+        - link "من نحن" [ref=e11] [cursor=pointer]:
+          - /url: /ar/about
+        - link "الجودة والشهادات" [ref=e12] [cursor=pointer]:
+          - /url: /ar/quality
+        - link "المدونة" [ref=e13] [cursor=pointer]:
+          - /url: /ar/blog
+        - link "اتصل بنا" [ref=e14] [cursor=pointer]:
+          - /url: /ar/contact
+      - generic [ref=e15]:
+        - button "العربية" [ref=e17]:
+          - text: العربية
+          - img [ref=e18]
+        - link "طلب عرض سعر" [ref=e20] [cursor=pointer]:
+          - /url: /ar/contact
+  - main [ref=e21]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]: CE & ANSI Certified | Since 2005
+        - heading "مصنعكم لحماية السمع — +200 مليون وحدة، +50 دولة" [level=1] [ref=e28]
+        - paragraph [ref=e29]: 200M+ ear plugs annually. OEM/ODM welcome. Trusted by distributors in 50+ countries.
+        - generic [ref=e30]:
+          - link "طلب عرض سعر" [ref=e31] [cursor=pointer]:
+            - /url: /ar/contact
+            - text: طلب عرض سعر
+            - img [ref=e32]
+          - link "عرض المنتجات" [ref=e34] [cursor=pointer]:
+            - /url: /ar/products
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - img [ref=e37]
+            - text: Free Samples
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - text: Low MOQ
+          - generic [ref=e42]:
+            - img [ref=e43]
+            - text: 24h Reply
+          - generic [ref=e45]:
+            - img [ref=e46]
+            - text: OEM/ODM
+      - generic [ref=e48]:
+        - link "سدادات أذن إسفنجية كلاسيكية بشكل الرصاصة - hearing protection China manufacturer سدادات أذن إسفنجية" [ref=e49] [cursor=pointer]:
+          - /url: /ar/products/sa-7-1-classical-bullet-shape-pu-foam-ear-plugs
+          - img "سدادات أذن إسفنجية كلاسيكية بشكل الرصاصة - hearing protection China manufacturer" [ref=e51]
+          - paragraph [ref=e52]: سدادات أذن إسفنجية
+        - link "سدادات أذن سيليكون ملونة للأطفال للسباحة - hearing protection China manufacturer سدادات أذن سيليكون" [ref=e53] [cursor=pointer]:
+          - /url: /ar/products/sa-1-1-colorful-silicone-swimming-earplugs-for-kids
+          - img "سدادات أذن سيليكون ملونة للأطفال للسباحة - hearing protection China manufacturer" [ref=e55]
+          - paragraph [ref=e56]: سدادات أذن سيليكون
+        - link "سدادات أذن قياسية بفلتر - hearing protection China manufacturer سدادات أذن بفلتر" [ref=e57] [cursor=pointer]:
+          - /url: /ar/products/sa-2-1-standard-filtered-earplugs
+          - img "سدادات أذن قياسية بفلتر - hearing protection China manufacturer" [ref=e59]
+          - paragraph [ref=e60]: سدادات أذن بفلتر
+        - link "سدادات أذن سيليكون قابلة للتشكيل حسب الطلب - hearing protection China manufacturer سدادات أذن قابلة للتشكيل" [ref=e61] [cursor=pointer]:
+          - /url: /ar/products/sa-5-1-custom-moldable-silicone-ear-plugs
+          - img "سدادات أذن سيليكون قابلة للتشكيل حسب الطلب - hearing protection China manufacturer" [ref=e63]
+          - paragraph [ref=e64]: سدادات أذن قابلة للتشكيل
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - img [ref=e71]
+        - generic [ref=e73]: CE EN352-2
+      - generic [ref=e74]:
+        - img [ref=e75]
+        - generic [ref=e77]: ANSI S3.19
+      - generic [ref=e78]:
+        - img [ref=e79]
+        - generic [ref=e81]: TUV
+      - generic [ref=e82]:
+        - img [ref=e83]
+        - generic [ref=e85]: BSCI
+      - generic [ref=e86]:
+        - img [ref=e87]
+        - generic [ref=e89]: ISO 9000
+    - generic [ref=e91]:
+      - generic [ref=e92]:
+        - heading "لماذا تختار EASTRAGON" [level=2] [ref=e93]
+        - paragraph [ref=e94]: شريكك الشامل لحماية السمع، من تصميم المنتج إلى التسليم العالمي
+      - generic [ref=e95]:
+        - generic [ref=e99]:
+          - heading "تجارة + مصنع خاص" [level=3] [ref=e100]
+          - paragraph [ref=e101]: تأسست شركة إيسترغون التجارية عام 2005؛ ومصنعنا الخاص Demo-D الذي بُني عام 2015 يضمن مراقبة الجودة الشاملة.
+        - generic [ref=e105]:
+          - heading "إنتاج ضخم" [level=3] [ref=e106]
+          - paragraph [ref=e107]: طاقة إنتاجية سنوية تزيد عن 200 مليون سدادة أذن إسفنجية و10 ملايين سدادة مخصصة ومليون غطاء أذن.
+        - generic [ref=e111]:
+          - heading "معتمد عالمياً" [level=3] [ref=e112]
+          - paragraph [ref=e113]: منتجات معتمدة CE، ANSI، TUV، BSCI، ISO9000 تلبي المعايير الدولية.
+        - generic [ref=e117]:
+          - heading "OEM / ODM" [level=3] [ref=e118]
+          - paragraph [ref=e119]: تصميم مخصص وتغليف وخدمات علامة تجارية مصممة لسوقك.
+        - generic [ref=e123]:
+          - heading "خبرة في التصدير" [level=3] [ref=e124]
+          - paragraph [ref=e125]: أكثر من 60% من المنتجات يتم تصديرها إلى أمريكا الشمالية وأوروبا والأسواق العالمية.
+        - generic [ref=e129]:
+          - heading "توصيل سريع" [level=3] [ref=e130]
+          - paragraph [ref=e131]: إنتاج محسّن ولوجستيات موثوقة للتسليم في الوقت المحدد.
+    - generic [ref=e133]:
+      - generic [ref=e134]:
+        - heading "منتجاتنا" [level=2] [ref=e135]
+        - paragraph [ref=e136]: حلول شاملة لحماية السمع لكل حاجة
+      - generic [ref=e137]:
+        - link "سدادات أذن إسفنجية — China hearing protection manufacturer سدادات أذن إسفنجية 4 products" [ref=e138] [cursor=pointer]:
+          - /url: /ar/products#foam-ear-plugs
+          - img "سدادات أذن إسفنجية — China hearing protection manufacturer" [ref=e143]
+          - generic [ref=e144]:
+            - generic [ref=e145]: سدادات أذن إسفنجية
+            - generic [ref=e146]:
+              - text: 4 products
+              - img [ref=e147]
+        - link "سدادات أذن سيليكون — China hearing protection manufacturer سدادات أذن سيليكون 4 products" [ref=e149] [cursor=pointer]:
+          - /url: /ar/products#silicone-ear-plugs
+          - img "سدادات أذن سيليكون — China hearing protection manufacturer" [ref=e154]
+          - generic [ref=e155]:
+            - generic [ref=e156]: سدادات أذن سيليكون
+            - generic [ref=e157]:
+              - text: 4 products
+              - img [ref=e158]
+        - link "سدادات أذن بفلتر — China hearing protection manufacturer سدادات أذن بفلتر 3 products" [ref=e160] [cursor=pointer]:
+          - /url: /ar/products#filter-ear-plugs
+          - img "سدادات أذن بفلتر — China hearing protection manufacturer" [ref=e165]
+          - generic [ref=e166]:
+            - generic [ref=e167]: سدادات أذن بفلتر
+            - generic [ref=e168]:
+              - text: 3 products
+              - img [ref=e169]
+        - link "سدادات أذن قابلة للتشكيل — China hearing protection manufacturer سدادات أذن قابلة للتشكيل 1 product" [ref=e171] [cursor=pointer]:
+          - /url: /ar/products#moldable-ear-plugs
+          - img "سدادات أذن قابلة للتشكيل — China hearing protection manufacturer" [ref=e176]
+          - generic [ref=e177]:
+            - generic [ref=e178]: سدادات أذن قابلة للتشكيل
+            - generic [ref=e179]:
+              - text: 1 product
+              - img [ref=e180]
+        - link "أغطية أذن سلبية — China hearing protection manufacturer أغطية أذن سلبية 4 products" [ref=e182] [cursor=pointer]:
+          - /url: /ar/products#ear-muffs
+          - generic [ref=e186]:
+            - img "أغطية أذن سلبية — China hearing protection manufacturer"
+          - generic [ref=e187]:
+            - generic [ref=e188]: أغطية أذن سلبية
+            - generic [ref=e189]:
+              - text: 4 products
+              - img [ref=e190]
+        - link "أغطية أذن إلكترونية — China hearing protection manufacturer أغطية أذن إلكترونية 1 product" [ref=e192] [cursor=pointer]:
+          - /url: /ar/products#electronic-ear-muffs
+          - generic [ref=e196]:
+            - img "أغطية أذن إلكترونية — China hearing protection manufacturer"
+          - generic [ref=e197]:
+            - generic [ref=e198]: أغطية أذن إلكترونية
+            - generic [ref=e199]:
+              - text: 1 product
+              - img [ref=e200]
+      - link "عرض الكل" [ref=e203] [cursor=pointer]:
+        - /url: /ar/products
+        - text: عرض الكل
+        - img [ref=e204]
+    - generic [ref=e208]:
+      - generic [ref=e209]:
+        - generic [ref=e210]: 200M+
+        - generic [ref=e211]: Ear Plugs / Year
+      - generic [ref=e212]:
+        - generic [ref=e213]: 50+
+        - generic [ref=e214]: Countries Exported
+      - generic [ref=e215]:
+        - generic [ref=e216]: 21+
+        - generic [ref=e217]: Years Experience
+      - generic [ref=e218]:
+        - generic [ref=e219]: "5"
+        - generic [ref=e220]: Global Certifications
+    - generic [ref=e222]:
+      - heading "الأسئلة الشائعة" [level=2] [ref=e223]
+      - generic [ref=e224]:
+        - group [ref=e225]:
+          - generic "ما هو الحد الأدنى لكمية الطلب لسدادات الأذن؟" [ref=e226] [cursor=pointer]:
+            - text: ما هو الحد الأدنى لكمية الطلب لسدادات الأذن؟
+            - img [ref=e227]
+        - group [ref=e229]:
+          - generic "هل تقدمون خدمات OEM/ODM؟" [ref=e230] [cursor=pointer]:
+            - text: هل تقدمون خدمات OEM/ODM؟
+            - img [ref=e231]
+        - group [ref=e233]:
+          - generic "ما الشهادات التي تحملها منتجاتكم؟" [ref=e234] [cursor=pointer]:
+            - text: ما الشهادات التي تحملها منتجاتكم؟
+            - img [ref=e235]
+        - group [ref=e237]:
+          - generic "ما هو وقت التسليم؟" [ref=e238] [cursor=pointer]:
+            - text: ما هو وقت التسليم؟
+            - img [ref=e239]
+        - group [ref=e241]:
+          - generic "هل يمكنني الحصول على عينات مجانية؟" [ref=e242] [cursor=pointer]:
+            - text: هل يمكنني الحصول على عينات مجانية؟
+            - img [ref=e243]
+        - group [ref=e245]:
+          - generic "إلى أي دول تصدّرون؟" [ref=e246] [cursor=pointer]:
+            - text: إلى أي دول تصدّرون؟
+            - img [ref=e247]
+    - generic [ref=e250]:
+      - heading "هل تبحث عن مورد موثوق لحماية السمع؟" [level=2] [ref=e251]
+      - paragraph [ref=e252]: تواصل معنا اليوم للحصول على أسعار تنافسية وخدمة OEM/ODM احترافية.
+      - generic [ref=e253]:
+        - link "احصل على عرض سعر مجاني" [ref=e254] [cursor=pointer]:
+          - /url: /ar/contact
+          - text: احصل على عرض سعر مجاني
+          - img [ref=e255]
+        - link "sales@eastragonltd.com" [ref=e257] [cursor=pointer]:
+          - /url: mailto:sales@eastragonltd.com
+          - img [ref=e258]
+          - text: sales@eastragonltd.com
+  - contentinfo [ref=e260]:
+    - generic [ref=e261]:
+      - generic [ref=e262]:
+        - generic [ref=e263]:
+          - generic [ref=e264]: EASTRAGON
+          - paragraph [ref=e265]: شركة تصنيع حماية السمع المهنية منذ 2005. منتجات معتمدة CE و ANSI يتم تصديرها إلى أكثر من 50 دولة.
+        - generic [ref=e266]:
+          - heading "روابط سريعة" [level=3] [ref=e267]
+          - list [ref=e268]:
+            - listitem [ref=e269]:
+              - link "من نحن" [ref=e270] [cursor=pointer]:
+                - /url: /ar/about
+            - listitem [ref=e271]:
+              - link "الجودة والشهادات" [ref=e272] [cursor=pointer]:
+                - /url: /ar/quality
+            - listitem [ref=e273]:
+              - link "اتصل بنا" [ref=e274] [cursor=pointer]:
+                - /url: /ar/contact
+        - generic [ref=e275]:
+          - heading "المنتجات" [level=3] [ref=e276]
+          - list [ref=e277]:
+            - listitem [ref=e278]:
+              - link "سدادات أذن إسفنجية" [ref=e279] [cursor=pointer]:
+                - /url: /ar/products#foam-ear-plugs
+            - listitem [ref=e280]:
+              - link "سدادات أذن سيليكون" [ref=e281] [cursor=pointer]:
+                - /url: /ar/products#silicone-ear-plugs
+            - listitem [ref=e282]:
+              - link "سدادات أذن بفلتر" [ref=e283] [cursor=pointer]:
+                - /url: /ar/products#filter-ear-plugs
+            - listitem [ref=e284]:
+              - link "أغطية أذن سلبية" [ref=e285] [cursor=pointer]:
+                - /url: /ar/products#ear-muffs
+            - listitem [ref=e286]:
+              - link "أغطية أذن إلكترونية" [ref=e287] [cursor=pointer]:
+                - /url: /ar/products#electronic-ear-muffs
+        - generic [ref=e288]:
+          - heading "اتصل بنا" [level=3] [ref=e289]
+          - list [ref=e290]:
+            - listitem [ref=e291]:
+              - img [ref=e292]
+              - generic [ref=e295]: طريق هواهونغ رقم 51، بلدة تشوتشوانغ، جيانغيين، ووشي، جيانغسو، الصين
+            - listitem [ref=e296]:
+              - img [ref=e297]
+              - link "+86-0510-81602599" [ref=e299] [cursor=pointer]:
+                - /url: tel:+86-0510-81602599
+            - listitem [ref=e300]:
+              - img [ref=e301]
+              - link "sales@eastragonltd.com" [ref=e303] [cursor=pointer]:
+                - /url: mailto:sales@eastragonltd.com
+      - generic [ref=e304]:
+        - paragraph [ref=e305]: © 2026 شركة إيسترغون الدولية للتجارة المحدودة. جميع الحقوق محفوظة.
+        - link "سياسة الخصوصية" [ref=e306] [cursor=pointer]:
+          - /url: /ar/privacy
+  - button "تحدث معنا" [ref=e308]:
+    - img [ref=e311]
+    - generic [ref=e313]: تحدث معنا
