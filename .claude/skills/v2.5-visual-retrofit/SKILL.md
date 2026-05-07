@@ -383,4 +383,97 @@ advantages: {
 
 ---
 
-*独立站建站智能体 · 独立站技能库 · v2.5 视觉对齐技能 · 2026-04-26*
+## v2.7-stage1 死角清扫（2026-05-05 新增 · Demo-D 5-05 视觉诊断触发）
+
+**起源**：Demo-D站（client-A）已做过 v2.5/v2.6/v2.7 三轮升级，但客户反馈"语言菜单选不到"。诊断发现 5 类死角：v2.5 retrofit 12 步 SOP **没扫到** Header 语言切换器、categories.icon emoji、5 语种独立目录硬编码英文、RTL bidi、业务叙事档案是否产出。这些是技能本身的漏洞，Demo-D是触发器。
+
+### 5 个新增必检项（每次 retrofit 必扫）
+
+#### 检查项 #X1 — Header 语言切换器 hover 死区
+
+```bash
+# 扫描 Header.astro 中是否用 mt-N 制造可视空隙（margin 不在元素 box hover 区）
+grep -nE 'top-full mt-[0-9]+ .*group-hover' src/components/Header.astro
+# 命中 = 死区 → 修：mt-N → pt-N + 拆内层 div
+```
+
+**修复模板**：
+```astro
+<!-- 错（死区）-->
+<div class="absolute top-full mt-2 ... opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+  <a class="bg-white ...">语言列表</a>
+</div>
+
+<!-- 对（紧贴）-->
+<div class="absolute top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible z-50">
+  <div class="bg-white rounded-lg shadow-lg ...">
+    <a>语言列表</a>
+  </div>
+</div>
+```
+
+**额外**：移动端 hamburger menu 必须有独立"语言切换胶囊按钮"区块（hover-only 在移动端永远触发不了）。
+
+#### 检查项 #X2 — categories[].icon 不能用 emoji
+
+```bash
+# 扫 data/products.ts 是否用 emoji 当 icon
+grep -nE "icon:\s*'[^a-zA-Z0-9 \-_]" src/data/products.ts
+# 命中 emoji 字符 → 改 SVG（lucide / heroicons），新建 src/components/CategoryIcon.astro 组件
+```
+
+**为什么**：emoji 在某些 OS / 字体环境下渲染失败成方框 □（生产端实测）。
+
+#### 检查项 #X3 — 5 语种独立目录硬编码英文残留
+
+```bash
+# 在 5 语种独立目录架构（pages/{en,es,fr,ar,ru}/index.astro）扫硬编码英文
+for lang in es fr ar ru; do
+  grep -nE 'Free Samples|Low MOQ|24h Reply|annually|distributors in 50|one-stop hearing' \
+    src/pages/$lang/index.astro
+done
+# 命中 = 5 语种独立目录的 copy-paste 漏翻陷阱 → 抽 i18n key 走 t()
+```
+
+**根治方案**：迁移到 `pages/[locale]/` 单一动态路由 — 但这是高风险动作，已上线站建议保留独立目录 + 加 build-qa 自动扫描即可（不强制升级路由架构）。
+
+#### 检查项 #X4 — RTL 数字 bidi 错位
+
+```bash
+# 阿语/希伯来/波斯页面里数字密集 section（Stats / 价格表 / MOQ 表）是否加 dir="ltr"
+grep -nE 'lg:grid-cols-4|grid-cols-2.*lg:grid-cols-4' src/pages/ar/index.astro
+# Stats banner 类容器需要 dir="ltr" 强制数字 LTR 显示
+```
+
+**修复**：在数字密集容器加 `dir="ltr"`：
+```astro
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center" dir="ltr">
+  <div>200M+</div> ...
+</div>
+```
+
+#### 检查项 #X5 — 业务叙事档案是否产出（v2.4 硬规则前置）
+
+```bash
+# 客户根目录是否有《业务叙事档案.md》
+test -f 客户/<客户目录>/业务叙事档案.md && echo "✓" || echo "✗ 必须先产出叙事档案"
+```
+
+**业务模型识别第一步必须读 client-manager 完整档案 + timeline**（不能光看网站表面）：
+
+```bash
+# v2.4 SOP 前置 — 不走捷径
+mcp__client-manager__get_client id=client-XXX
+# 重点读：industry / products / notes / timeline 全部条目
+# 然后再做 7 业务模型判定
+```
+
+**反例**：Demo-D 5-05 视觉诊断初版**只看网站表面**判成 OEM-ODM 混合 Brand Owner，但 client-manager 4-27 timeline 早记录"业务模型修正：Pure Manufacturer → Solution Integrator"。差距来源：没读完整档案 + 时间线。
+
+### 这 5 项纳入 starter `scripts/build-qa.sh`
+
+下次 starter 升级（v2.8 或 v2.9）时把这 5 检查写进 build-qa.sh 自动化扫描。在此之前手动按本节走。
+
+---
+
+*独立站建站智能体 · 独立站技能库 · v2.5 视觉对齐技能 · 2026-04-26 立 / 2026-05-05 加 v2.7-stage1 死角清扫 5 项*
