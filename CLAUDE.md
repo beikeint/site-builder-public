@@ -1,4 +1,4 @@
-# 独立站建站-site-builder v2.8
+# 独立站建站-site-builder v2.10
 
 ---
 > 🎯 **首次激活时必读(对客户场景生效,内部使用可忽略)**
@@ -16,8 +16,10 @@
 ---
 
 
-> 版本：v2.8 | 2026-04-29 升级
-> 架构：**业务叙事先行** + DNA满配 + **前沿视觉默认** + **重型设备 12 板块体系** + **6 语种翻译并行管道** + 模块化布局系统 + 功能可选 | astro-b2b-starter 配置驱动 | 9个技能 | AI站内能力 | 经验库自动进化
+> 版本：v2.10 | 2026-05-07 升级
+> 架构：**业务叙事先行** + DNA满配 + **前沿视觉默认** + **重型设备 12 板块体系** + **6 语种翻译并行管道** + **per-locale 博客 slug** + **反 AI 味产品/Solution 页 QA** + 模块化布局系统 + 功能可选 | astro-b2b-starter 配置驱动 | 10个技能（v2.5-visual-retrofit 已加入）| AI站内能力 | 经验库自动进化
+> v2.10 升级（2026-05-07）：**per-locale 博客 slug 路由架构 + 反 AI 味 QA 扩展产品/Solution 页**。① BlogPost interface 加 `slugs?: Partial<Record<string, string>>` + helper getBlogSlugForLocale + BaseLayout pathByLocale prop（hreflang 按 locale 真实 slug 输出）— 客户反馈 6 语种博客 slug 全英文驱动。② build-qa.sh #43 AI 套词扫描（products/solutions data） + #44 案例真实性扫描（cases.ts/realCase）— 扩 v2.9 6 项 HCU/SpamBrain 门禁到产品/Solution 页。③ demo-a 通用模块 3 件抽出（WhyChooseDemo-A/ServiceSupportSection/CrossSellSection）+ Solution 主力 5 详情页板块从 9 升到 14（加 Optional Add-ons / ROI / Service & Support / Cross-Sell / Why Choose）。④ 修 web-ops v11.1 commit 7ff7127 留下 2 build 阻塞 bug（article2Body 删定义未删引用 / Record<string,string> 在 JSX expression 里 esbuild 误判 JSX 标签）。
+> 触发事件：Demo-C双站（demo-c.com + demo-a.com）从 web-ops 转 site-builder 的 8 项架构级改造（2026-05-07 客户反馈3+5）
 > v2.8 升级（2026-04-29）：**重型设备 B2B 产品页 12 板块体系** + **6 语种翻译并行管道**进入 starter 源头。① 重型设备 12 板块（Pure Manufacturer / Solution Integrator / OEM-ODM 业务模型必上）：products-deep-dive.ts + DeepDiveSections.astro 组件 + Standard.astro 自动挂接 + build-qa #35 自动检测。② 6 语种翻译并行管道：scripts/merge-translations.mjs（参数化）+ SPAWN-TRANSLATORS.md（5 sonnet prompt 模板含行业术语对照表）+ build-qa #36 LocaleString 完整性检查。
 > 触发事件：客户 002 demo-c.com 《问题反馈3.docx》业务模型升级（Pure Manufacturer → Solution Integrator Multi-Tier）— 2026-04-29 一次性沉淀两大可复用 IP（产品页决策包 + 翻译并行管道）
 > v2.5 升级（2026-04-25）：**前沿视觉默认配置进入 starter 源头** — FloatingCTA Intercom-style 单胶囊（替代 v1 三圆按钮模板）+ ScrollProgress 顶部品牌渐变进度条 + Header backdrop-blur sticky + Cards hover lift + brand glow（零 markup）+ SectionBackdrop bold 模式（mesh gradient + brand blob + radial mask）。BaseLayout 自动注入询盘+进度条三件套。新增交付 QA #16/#17/#18。从"运营补丁视角"上升到"建站源头视角"
@@ -413,7 +415,7 @@ features.programmaticSEO: true
 | AI友好 | robots.txt AI白名单 + llms.txt + 答案胶囊 |
 | 程序化SEO | 3种差异化内容模板（国家/行业/问题4子类型） |
 | AI站内 | 产品选型向导(wizardTags) + ROI计算器(数据驱动) + AI顾问(Claude API) |
-| QA | `npm run qa` → build-qa.sh 16项自动检查（#19 占位反模式扩展 + qa-no-placeholder.sh src 层硬 guard，2026-05-03 起） |
+| QA | `npm run qa` → build-qa.sh 自动检查含 #19 占位反模式扩展 + qa-no-placeholder.sh src 层硬 guard（2026-05-03）+ **v2.9 6 项 HCU/SpamBrain 内容质量门禁 #37-#42**（2026-05-07，对齐运营 pre-deploy 6 道门禁） |
 
 ---
 

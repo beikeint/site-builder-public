@@ -32,6 +32,15 @@ description: New client onboarding - requirements confirmation, project folder s
 | 联系人 + 邮箱 + 电话 + WhatsApp | 网站联系页 + 询盘接收 |
 | 域名（如已注册） | 用于 SEO 配置 |
 | 目标市场 | 决定语言和内容方向 |
+| **真名作者 + LinkedIn 个人页 URL**（v2.9 必填，2026-05-07 立） | 博客 E-E-A-T 强信号，articleSchema 输出 Person.sameAs |
+
+**🚨 真名作者硬规则（v2.9，2026-05-07 立 / 来源 web-ops v10.6 质量审计）**
+
+- 客户必须提供至少 1 个**真名工程师/技术经理 + 公开可验证的 LinkedIn 个人页 URL**（URL 必含 `/in/` 路径）
+- 禁止集体名占位：`Editorial Team / Technical Team / Organization / Marketing / Staff / Admin` 任何一个 = build-qa #37 FAIL
+- 同时收集：作者职位（如 "Sr. Application Engineer at XXX"）+ 1-2 句背景（年限、认证、专长）
+- **未拿到真名作者 = 不允许进入博客生产阶段**（content-production 不动手）。可以先做产品/About 等无 E-E-A-T 强约束的页面
+- 来源事件：4 站 60+ 博客 author 全是 Organization → HCU E-E-A-T 信号缺失 → 流量支柱博客（EPS-vs-EPP 132 imp / 木材胶水 63 imp）下次 Core Update 易切
 
 **如果客户信息不全，发送素材收集清单（见下方提示词）。**
 
