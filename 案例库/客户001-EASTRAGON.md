@@ -1,9 +1,9 @@
-# 客户 001 · EASTRAGON / hearingprotect.com（视觉天花板重做实战）
+# 客户 001 · EASTRAGON / demo-a.com（视觉天花板重做实战）
 
 > 时间：2026-04-26 ~ 2026-04-27
 > 业务模型：**Solution Integrator**（贸易公司 Eastragon 2005 + 自有工厂 Demo-D 2015 + 整合供应链 + Customize R&D + Market Protection）
 > 行业：PPE 听力防护
-> 域名：hearingprotect.com（前期 demo-d.com 临时占位已 301）
+> 域名：demo-a.com（前期 demo-d.com 临时占位已 301）
 > 服务器：Bluehost 共享主机 box5731.bluehost.com / 162.241.252.182
 > 5 语种：en/es/fr/ar/ru
 > 触发 v2.6 升级：客户老板反馈"很 low / 像 AI 半成品 / 完全没改变 / 小孩子都能做"
@@ -11,11 +11,11 @@
 ## 一、整个项目分阶段
 
 ### 阶段 1 · 域名搬迁（2026-04-26）
-- demo-d.com (Hostinger) → hearingprotect.com (Bluehost)
+- demo-d.com (Hostinger) → demo-a.com (Bluehost)
 - DNS：阿里云万网改 A 记录 47.88.13.175 (tradew) → 162.241.252.182
 - SSL：Bluehost AutoSSL 自动续 Let's Encrypt R12（2026-07-26 到期）
-- 旧 .htaccess 备份并删除（曾把 hearingprotect.com 强制 301 到 www.eastragonltd.com）
-- demo-d.com 整站 301 → hearingprotect.com（保 30 天 50 imp）
+- 旧 .htaccess 备份并删除（曾把 demo-a.com 强制 301 到 www.eastragonltd.com）
+- demo-d.com 整站 301 → demo-a.com（保 30 天 50 imp）
 
 ### 阶段 2 · 海外品牌重定位（2026-04-27 早）
 - Sian Protech / Sian Safety / 阿拉伯语 سيان بروتيك → **EASTRAGON**（约 50 处替换 + 5 i18n + 5 page schema）
@@ -64,7 +64,7 @@
 
 | Commit | 说明 |
 |---|---|
-| `862e2a3` | feat: 域名搬迁 demo-d.com → hearingprotect.com + v2.5 视觉对齐 |
+| `862e2a3` | feat: 域名搬迁 demo-d.com → demo-a.com + v2.5 视觉对齐 |
 | `1dc6135` | docs: 域名搬迁 + v2.5 视觉升级交付文档同步 |
 | `d1d302e` | fix: Header logo inline style 强制 48px |
 | 后续多个 | feat: Phase 7 视觉天花板（删占位区 + Stats 修复 + 类目卡放大）/ Phase 8 视觉素材填充（Advantages 6 张 + Factory 1 张 + Compare 删）/ Phase 12 视觉素材深化（9 博客封面 + 类目卡重做 + Advantages overlay 修复） |
@@ -80,7 +80,7 @@
 
 ## 四、待客户配合的事
 
-- ⏳ Search Console：运营人员手工添加 hearingprotect.com 属性 + DNS TXT 验证 + 在 demo-d.com 发起地址变更通知
+- ⏳ Search Console：运营人员手工添加 demo-a.com 属性 + DNS TXT 验证 + 在 demo-d.com 发起地址变更通知
 - ⏳ Logo 替换：客户提供过 logo.png（已上线）— 后续如果客户拍了真实工厂照可替换 about Factory 插画
 
 ## 五、Hero banner 差异化（待做 / 老 v2.6 #23 留给后续）

@@ -363,7 +363,7 @@ advantages: {
 
 | 客户 | 域名 | 当前代 | 升级状态 |
 |---|---|---|---|
-| 客户 001 Demo-D | hearingprotect.com | v2.6 视觉重做版 | ✅ 2026-04-27 EASTRAGON 视觉天花板事件触发 |
+| 客户 001 Demo-D | demo-a.com | v2.6 视觉重做版 | ✅ 2026-04-27 EASTRAGON 视觉天花板事件触发 |
 | 客户 002 Demo-C / demo-c | demo-c.com | ops 补丁版（v2 浮动 + 4 层 backdrop） | ⬜ 补 ScrollProgress + Header blur + global.css |
 | 客户 002u Demo-A / demo-a | demo-a.com | ops 补丁版 | ⬜ 同上 |
 | 客户 003 Demo-E | <填> | <填> | ⬜ |
